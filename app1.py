@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 import plotly.graph_objects as go
 import networkx as nx
 import numpy as np
+import os
 
 app = Flask(__name__)
 
@@ -92,5 +93,6 @@ def index():
 
     return render_template('index.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
