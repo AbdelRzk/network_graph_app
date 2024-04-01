@@ -1,5 +1,4 @@
-Flask
-numpy
-matplotlib
-plotly
-networkx
+Flask==2.0.1
+networkx==2.5
+plotly==5.3.1
+numpy==1.21.2
