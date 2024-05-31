@@ -4,7 +4,8 @@ import networkx as nx
 import numpy as np
 import os
 
-app = Flask(__name__)
+# app = Flask(__name__)
+app = Flask(__name__, template_folder='Template')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
