@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Graph Visualization</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/1600x900/?nature,water') no-repeat center center fixed;
+            background-size: cover;
+            color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0 20px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Network Graph Input</h1>
+        <form method="POST">
+            <label for="number_of_individuals">Number of individuals:</label>
+            <input type="text" id="number_of_individuals" name="number_of_individuals" required><br><br>
+            
+            <label for="matrix_scores">Matrix scores (row by row, values separated by commas):</label>
+            <textarea id="matrix_scores" name="matrix_scores" rows="5" required></textarea><br><br>
+            
+            <label for="phq_9_scores">PHQ-9 scores (comma-separated):</label>
+            <input type="text" id="phq_9_scores" name="phq_9_scores" required><br><br>
+            
+            <input type="submit" value="Generate Graph">
+        </form>
+    </div>
+</body>
+</html>
