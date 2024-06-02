@@ -4,7 +4,6 @@ import networkx as nx
 import numpy as np
 import os
 
-# app = Flask(__name__)
 app = Flask(__name__, template_folder='Template')
 
 @app.route('/', methods=['GET', 'POST'])
@@ -38,7 +37,6 @@ def index():
 
             fig = go.Figure()
 
-            # Add edges with colors mapped to the 'Portland' colorscale
             for edge, weight in zip(G.edges(data=True), normalized_weights):
                 x0, y0, z0 = pos_3d[edge[0]]
                 x1, y1, z1 = pos_3d[edge[1]]
@@ -49,7 +47,6 @@ def index():
                     hoverinfo='none'
                 ))
 
-            # Add nodes
             node_x, node_y, node_z = [], [], []
             for node in G.nodes():
                 x, y, z = pos_3d[node]
@@ -64,7 +61,6 @@ def index():
             )
             fig.add_trace(node_trace)
 
-            # Dummy trace for colorbar
             colorbar_trace = go.Scatter3d(
                 x=[None], y=[None], z=[None], mode='markers',
                 marker=dict(
@@ -95,5 +91,5 @@ def index():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))
+    port = int(os.environ.get("PORT", 8000))
     app.run(host='0.0.0.0', port=port)
