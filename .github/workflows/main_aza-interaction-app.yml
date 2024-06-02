@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'aza-interaction-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7AEA927CA33F4DE3A684135E09E85287 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4FE4B10B83024987AD3E922B9125F47E }}
